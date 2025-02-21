@@ -1,0 +1,119 @@
+/* General Navbar Styling */
+.navbar {
+  padding: 20px 40px; /* Increased padding for better spacing */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffffff; /* Clean white background */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* Logo Styling */
+.navbar .logo {
+  width: 150px;
+  transition: opacity 0.3s ease; /* Smooth hover effect */
+}
+
+.navbar .logo:hover {
+  opacity: 0.8; /* Subtle hover effect */
+}
+
+/* Navbar Menu Styling */
+.navbar-menu {
+  display: flex;
+  list-style: none;
+  gap: 30px; /* Increased gap for better spacing */
+  color: #333333; /* Darker text for better contrast */
+  font-size: 16px;
+  font-weight: 500; /* Medium font weight */
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-menu li {
+  cursor: pointer;
+  padding: 8px 12px; /* Added padding for better click area */
+  position: relative; /* For the active line */
+  transition: color 0.3s ease; /* Smooth color transition */
+}
+
+.navbar-menu li:hover {
+  color: #e74c3c; /* Highlight color on hover */
+}
+
+.navbar-menu .active {
+  color: #e74c3c; /* Highlight color for active item */
+  font-weight: 600; /* Bold font for active item */
+}
+
+.navbar-menu .active::after {
+  content: "";
+  position: absolute;
+  bottom: -5px; /* Position the line below the text */
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #e74c3c; /* Active line color */
+  animation: underline 0.3s ease; /* Smooth animation for the line */
+}
+
+@keyframes underline {
+  from {
+    width: 0; /* Start with no width */
+  }
+  to {
+    width: 100%; /* Expand to full width */
+  }
+}
+
+/* Navbar Right Section Styling */
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 30px; /* Increased gap for better spacing */
+}
+
+.navbar-right img {
+  width: 24px; /* Fixed size for icons */
+  height: 24px;
+  cursor: pointer;
+  transition: opacity 0.3s ease; /* Smooth hover effect */
+}
+
+.navbar-right img:hover {
+  opacity: 0.8; /* Subtle hover effect */
+}
+
+/* Search Icon and Basket Icon Styling */
+.navbar-seach-icon {
+  position: relative;
+}
+
+.navbar-seach-icon .dot {
+  position: absolute;
+  min-width: 10px;
+  min-height: 10px;
+  background-color: #e74c3c; /* Highlight color for the dot */
+  border-radius: 50%; /* Perfect circle */
+  top: -5px;
+  right: -5px;
+}
+
+/* Button Styling */
+.navbar button {
+  background: #e74c3c; /* Vibrant button color */
+  font-size: 16px;
+  color: #ffffff; /* White text for contrast */
+  border: none; /* Remove default border */
+  padding: 10px 30px;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Smooth hover effect */
+}
+
+.navbar button:hover {
+  background-color: #c0392b; /* Darker shade on hover */
+}

@@ -1,0 +1,86 @@
+/* Header Container */
+.header {
+  height: 34vw;
+  margin: 30px auto;
+  background: url("/header_img.png") no-repeat;
+  background-size: contain;
+  position: relative;
+  border-radius: 15px; /* Rounded corners for a modern look */
+  overflow: hidden; /* Ensure the image stays within the rounded corners */
+}
+
+/* Glassy Overlay with Reduced Opacity */
+.header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(
+    250,
+    250,
+    250,
+    0.09
+  ); /* Reduced opacity for better visibility */
+  backdrop-filter: blur(2px); /* Slightly reduced blur for subtlety */
+  z-index: 1; /* Ensure the overlay is above the background image */
+}
+
+/* Header Content */
+.header-contents {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 1.5vw;
+  max-width: 50%;
+  bottom: 10%;
+  left: 6vw;
+  animation: fadeIn 3s;
+  z-index: 2; /* Ensure the content is above the overlay */
+}
+
+/* Header Title */
+.header-contents h2 {
+  font-weight: 600; /* Bold font for emphasis */
+  color: white;
+  font-size: max(4.5vw, 22px);
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5); /* Subtle text shadow for better readability */
+}
+
+/* Header Description */
+.header-contents p {
+  color: white;
+  font-size: max(1.2vw, 14px); /* Slightly larger font for better readability */
+  line-height: 1.6; /* Improved line spacing */
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5); /* Subtle text shadow */
+}
+
+/* Header Button */
+.header-contents button {
+  border: none;
+  color: #ffffff; /* White text for contrast */
+  font-weight: 600; /* Bold font */
+  padding: 1vw 2.3vw;
+  background-color: #e74c3c; /* Vibrant red to match the navbar */
+  font-size: max(1.2vw, 14px);
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth hover effects */
+}
+
+.header-contents button:hover {
+  background-color: #c0392b; /* Darker shade on hover */
+  transform: scale(1.05); /* Slight zoom effect */
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
