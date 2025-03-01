@@ -2,8 +2,8 @@
 .header {
   height: 34vw;
   margin: 30px auto;
-  background: url("/header_img.png") no-repeat;
-  background-size: contain;
+  background: url("/header_img.jpg") no-repeat;
+  background-size: cover;
   position: relative;
   border-radius: 15px; /* Rounded corners for a modern look */
   overflow: hidden; /* Ensure the image stays within the rounded corners */
