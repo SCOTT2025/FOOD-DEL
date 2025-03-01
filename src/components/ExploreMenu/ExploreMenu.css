@@ -1,60 +1,73 @@
 .explore-menu {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-  }
-  
-  .explore-menu h1 {
-    color: #262626;
-    font-weight: 500;
-  }
-  
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.explore-menu h1 {
+  color: #262626;
+  font-weight: 500;
+}
+
+.explore-menu-text {
+  max-width: 60%;
+  color: #808080;
+}
+
+.explore-menu-list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+  text-align: center;
+  margin: 20px 0px;
+  overflow-x: scroll;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  max-width: 100%; /* Ensure the container is constrained */
+  width: 100%; /* Ensure the container is constrained */
+}
+
+.explore-menu-list::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, and Opera */
+}
+
+.explore-menu-list-item {
+  flex-shrink: 0; /* Prevent flex items from shrinking */
+}
+
+.explore-menu-list-item img {
+  width: 7.5vw;
+  min-width: 80px;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: 0.2s;
+  border: 3px solid transparent; /* Transparent border by default */
+  box-sizing: border-box; /* Include border in element dimensions */
+}
+
+.explore-menu-list-item p {
+  margin-top: 10px;
+  color: #747474;
+  font-size: max(1.4vw, 16px);
+  cursor: pointer;
+}
+
+.explore-menu hr {
+  margin: 10px 0px;
+  height: 2px;
+  background-color: #1e1616;
+  border: none;
+}
+
+.explore-menu-list .active {
+  border: 3px solid tomato; /* Active border color */
+  padding: 1px;
+}
+
+@media (max-width: 1050px) {
   .explore-menu-text {
-    max-width: 60%;
-    color: #808080;
+    max-width: 100%;
+    font-size: 14px;
   }
-  
-  .explore-menu-list {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 30px;
-    text-align: center;
-    margin: 20px 0px;
-    overflow-x: scroll;
-    scrollbar-width: none; /* Firefox */
-    -ms-overflow-style: none; /* Internet Explorer 10+ */
-  }
-  
-  .explore-menu-list::-webkit-scrollbar {
-    display: none; /* Chrome, Safari, and Opera */
-  }
-  
-  .explore-menu-list-item img {
-    width: 7.5vw;
-    min-width: 80px;
-    cursor: pointer;
-    border-radius: 50%;
-    transition: 0.2s;
-    border: 3px solid transparent; /* Transparent border by default */
-    box-sizing: border-box; /* Include border in element dimensions */
-  }
-  
-  .explore-menu-list-item p {
-    margin-top: 10px;
-    color: #747474;
-    font-size: max(1.4vw, 16px);
-    cursor: pointer;
-  }
-  
-  .explore-menu hr {
-    margin: 10px 0px;
-    height: 2px;
-    background-color: #1e1616;
-    border: none;
-  }
-  
-  .explore-menu-list .active {
-    border: 3px solid tomato; /* Active border color */
-    padding: 1px;
-  }
+}

@@ -27,7 +27,7 @@
 
 .footer-content-left li,
 .footer-content-right li,
-.footer-content-center li { 
+.footer-content-center li {
   list-style: none;
   margin-bottom: 10px;
   cursor: pointer;
@@ -49,4 +49,15 @@
   margin: 20px 0;
   background-color: grey;
   border: none;
+}
+
+@media (max-width: 720px) {
+  .footer-content {
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+  }
+  .footer-copyright{
+    text-align: center;
+  }
 }
