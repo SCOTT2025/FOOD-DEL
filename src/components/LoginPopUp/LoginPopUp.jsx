@@ -53,7 +53,7 @@ const LoginPopUp = ({ closePopup }) => {
                 {" "}
                 Click here
               </span>
-              .
+          
             </p>
           </>
         )}
@@ -62,4 +62,4 @@ const LoginPopUp = ({ closePopup }) => {
   );
 };
 
-export default LoginPopUp;
+export default LoginPopUp; 
