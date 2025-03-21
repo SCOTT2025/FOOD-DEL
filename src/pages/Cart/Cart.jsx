@@ -1,9 +1,20 @@
-import React, { useContext } from 'react';
+import React, { useContext, useMemo } from 'react';
 import './Cart.css';
 import { StoreContext } from '../../context/StoreContext';
+import { useNavigate } from 'react-router-dom';
 
 const Cart = () => {
   const { cartItems, food_list, removeFromCart } = useContext(StoreContext);
+
+  const navigate = useNavigate();
+
+  // Dynamically calculate the total cart amount
+  const totalCartAmount = useMemo(() => {
+    return food_list.reduce((total, item) => {
+      const quantity = cartItems[item._id] || 0;
+      return total + item.price * quantity;
+    }, 0);
+  }, [cartItems, food_list]);
 
   return (
     <div className='cart'>
@@ -39,20 +50,20 @@ const Cart = () => {
           <div>
             <div className="cart-total-details">
               <p>Subtotal</p>
-              <p>{0}</p>
+              <p>${totalCartAmount}</p>
             </div>
             <hr />
             <div className="cart-total-details">
               <p>Delivery Fee</p>
-              <p>2</p>
+              <p>${totalCartAmount === 0 ? 0 : 2}</p>
             </div>
             <hr />
             <div className="cart-total-details">
               <p>Total</p>
-              <p>{0}</p>
+              <p>${totalCartAmount === 0 ? 0 : totalCartAmount + 2}</p>
             </div>
           </div>
-          <button>PROCEED TO CHECKOUT</button>
+          <button onClick={() => navigate("/order")}>PROCEED TO CHECKOUT</button>
         </div>
         <div className="cart-promocode">
           <div>

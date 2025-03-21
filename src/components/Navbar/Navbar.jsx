@@ -3,10 +3,14 @@ import './Navbar.css'
 import {assets} from '../../assets/assets'
 import { Link } from 'react-router-dom';
 import LoginPopUp from '../LoginPopUp/LoginPopUp';
+import { StoreContext } from '../../context/StoreContext';
+import { useContext } from 'react';
 
 const Navbar = () => {
 
    const [menu,setMenu] = useState("home");
+
+   const {getTotalCartAmount} = useContext(StoreContext); // get total cart amount from context
 
    const [showPopup, setShowPopup] = useState(false);   
 
@@ -14,16 +18,24 @@ const Navbar = () => {
     <div className='navbar'>
       <Link to="/" > <img src={assets.logo} alt="" className="logo" /> </Link>
       <ul className= "navbar-menu">
-        <Link to='/' onClick={()=>setMenu("home")} className={menu ==="home" ? "active": ""} >home</Link >
-        <a href='#explore-menu' onClick={()=>setMenu("menu")} className={menu ==="menu"?"active":""}>menu</a>
-        <a href='#app-download' onClick={()=>setMenu("mobile-app")} className={menu ==="mobile-app"?"active":""}>mobile-app</a>
-        <a href='#footer' onClick={()=>setMenu("contact-us")} className={menu ==="contact-us"?"active":""}>contact us</a>
+        <li>
+          <Link to='/' onClick={()=>setMenu("home")} className={menu ==="home" ? "active": ""} >home</Link >
+        </li>
+        <li>
+          <a href='#explore-menu' onClick={()=>setMenu("menu")} className={menu ==="menu"?"active":""}>menu</a>
+        </li>
+        <li>
+          <a href='#app-download' onClick={()=>setMenu("mobile-app")} className={menu ==="mobile-app"?"active":""}>mobile-app</a>
+        </li>
+        <li>
+          <a href='#footer' onClick={()=>setMenu("contact-us")} className={menu ==="contact-us"?"active":""}>contact us</a>
+        </li>
       </ul>
       <div className="navbar-right">
         <img src={assets.search_icon} alt="" />
         <div className="navbar-seach-icon">
           <Link to='/cart'> <img src={assets.basket_icon} alt="" /> </Link>
-          <div className="dot"></div>
+          {getTotalCartAmount() > 0 && <div className="dot"></div>}
         </div>
         <button onClick={() => setShowPopup(true)}>Sign Up</button>
         {showPopup && <LoginPopUp closePopup={() => setShowPopup(false)} />}

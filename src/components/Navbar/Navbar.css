@@ -5,10 +5,16 @@
   justify-content: space-between;
   align-items: center;
   background-color: #ffffff; /* Clean white background */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  border-radius: 0 0 10px 10px; /* Remove top border radius */
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Enhanced shadow for depth */
+  transition: box-shadow 0.3s ease; /* Smooth transition for hover effect */
   position: sticky;
   top: 0;
   z-index: 1000;
+}
+
+.navbar:hover {
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3); /* Slightly stronger shadow on hover */
 }
 
 /* Logo Styling */
@@ -38,9 +44,16 @@
   padding: 8px 12px; /* Added padding for better click area */
   position: relative; /* For the active line */
   transition: color 0.3s ease; /* Smooth color transition */
+  border-radius: 5px; /* Rounded corners for menu items */
 }
 
 .navbar-menu li:hover {
+  background-color: rgba(
+    231,
+    76,
+    60,
+    0.1
+  ); /* Subtle background highlight on hover */
   color: #e74c3c; /* Highlight color on hover */
 }
 
@@ -112,10 +125,12 @@
   border-radius: 50px;
   cursor: pointer;
   transition: background-color 0.3s ease; /* Smooth hover effect */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow to the button */
 }
 
 .navbar button:hover {
   background-color: #c0392b; /* Darker shade on hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Stronger shadow on hover */
 }
 
 @media (max-width: 1050px) {
