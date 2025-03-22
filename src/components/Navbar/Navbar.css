@@ -177,3 +177,8 @@
     display: none;
   }
 }
+
+/* Fix for anchor links being hidden behind the navbar */
+:target {
+  scroll-margin-top: 80px; /* Adjust this value to match the height of the navbar */
+}

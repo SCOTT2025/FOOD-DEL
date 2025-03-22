@@ -33,7 +33,7 @@ const {totalCartAmount} = useContext(StoreContext); // get total cart amount fro
        <div className="cart-total">
           <h2>Cart Totals</h2>
           <div>
-            <div className="cart-total-details">
+          <div className="cart-total-details">
               <p>Subtotal</p>
               <p>${totalCartAmount}</p>
             </div>
